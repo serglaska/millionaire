@@ -1,0 +1,8 @@
+.title {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 116%;
+  font-family: Inter;
+  font-style: normal;
+  color: var(--black-100);
+}

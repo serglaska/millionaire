@@ -1,0 +1,122 @@
+[
+  {
+    "question": "What is the color of the White House?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Pink",
+      "B": "Blue",
+      "C": "White",
+      "D": "Rainbow"
+    }
+  },
+  {
+    "question": "How many legs does a spider typically have?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "100",
+      "B": "2",
+      "C": "8",
+      "D": "4"
+    }
+  },
+  {
+    "question": "What do you call a group of crows?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "A flock",
+      "B": "A murder",
+      "C": "A gaggle",
+      "D": "A herd"
+    }
+  },
+  {
+    "question": "What is the capital of Australia?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Sydney",
+      "B": "Melbourne",
+      "C": "Brisbane",
+      "D": "Canberra"
+    }
+  },
+  {
+    "question": "What is the world's largest ocean?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Atlantic",
+      "B": "Indian",
+      "C": "Pacific",
+      "D": "Arctic"
+    }
+  },
+  {
+    "question": "Who wrote the \"Game of Thrones\" series of books?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "J.K. Rowling",
+      "B": "George R. R. Martin",
+      "C": "Stephen King",
+      "D": "Suzanne Collins"
+    }
+  },
+  {
+    "question": "What is the square root of 144?",
+    "correctAnswer": "12",
+    "options": {
+      "A": "12",
+      "B": "14",
+      "C": "16",
+      "D": "18"
+    }
+  },
+  {
+    "question": "Which planet is known as the \"Red Planet\"?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Venus",
+      "B": "Mars",
+      "C": "Jupiter",
+      "D": "Saturn"
+    }
+  },
+  {
+    "question": "What is the chemical symbol for gold?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Gd",
+      "B": "Go",
+      "C": "Au",
+      "D": "Ag"
+    }
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Vincent Van Gogh",
+      "B": "Pablo Picasso",
+      "C": "Leonardo da Vinci",
+      "D": "Michelangelo"
+    }
+  },
+  {
+    "question": "What is the name of the longest river in the world?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Amazon",
+      "B": "Nile",
+      "C": "Yangtze",
+      "D": "Mississippi"
+    }
+  },
+  {
+    "question": "Who was the first person to walk on the moon?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Buzz Aldrin",
+      "B": "Neil Armstrong",
+      "C": "Yuri Gagarin",
+      "D": "Michael Collins"
+    }
+  }
+]

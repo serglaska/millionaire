@@ -1,0 +1,14 @@
+.question-page-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 376px;
+  height: 100%;
+  background: var(--black-5);
+}
+
+
+.question-part {
+  padding: 133px 0 122px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

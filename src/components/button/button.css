@@ -1,0 +1,16 @@
+.button-wrapper {
+  width: 296px;
+  height: 64px;
+  flex-shrink: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 116%;
+  font-family: Inter;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: var(--white-100);
+  background: var(--orange-100);
+}

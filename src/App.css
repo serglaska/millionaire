@@ -1,0 +1,91 @@
+#root {
+  /* height: inherit; */
+  height: 100%;
+  /* display: flex ;
+  flex-direction: column; */
+}
+
+html,
+body {
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  --white-100: #fff;
+  --black-40: #d0d0d8;
+  --black-5:  #F5F5F7;
+  --black-100: #1c1c21;
+  --orange-100: #FF8B37;
+}
+
+/* Reset some default styles to ensure consistency across browsers */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Add some spacing for readability and aesthetics */
+h1,
+h2,
+h3 {
+  margin-bottom: 10px;
+}
+
+/* Define default styles for links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Set default styles for container elements */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Add some basic styling to buttons */
+button,
+input[type="submit"] {
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+/* Style form elements */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Add some responsive settings for smaller screens */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
