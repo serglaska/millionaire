@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit'
 import { ButtonOrder } from '../types'
 // import type { PayloadAction } from '@reduxjs/toolkit'
 
-export interface roundState {
+export interface RoundState {
   answer: ButtonOrder | string
 }
 
-const initialState: roundState = {
+const initialState: RoundState = {
   answer: '',
 }
 
@@ -15,10 +15,9 @@ export const roundSlice = createSlice({
   initialState,
   reducers: {
     takeAnswer: (state, action) => {
-      console.log('action', action)
-      console.log('state', state)
       state.answer = action.payload
     },
+    clearRoundState: () => initialState,
     // answer state.answer
     // decrement: (state) => {
     //   state.value -= 1
@@ -30,6 +29,6 @@ export const roundSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { takeAnswer } = roundSlice.actions
+export const { takeAnswer, clearRoundState } = roundSlice.actions
 
 export default roundSlice.reducer

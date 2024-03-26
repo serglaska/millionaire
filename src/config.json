@@ -1,5 +1,7 @@
 [
   {
+    "award": "$500",
+    "level": 1,
     "question": "What is the color of the White House?",
     "correctAnswer": "C",
     "options": {
@@ -10,6 +12,8 @@
     }
   },
   {
+    "award": "$1,000",
+    "level": 2,
     "question": "How many legs does a spider typically have?",
     "correctAnswer": "C",
     "options": {
@@ -20,6 +24,8 @@
     }
   },
   {
+    "award": "$2,000",
+    "level": 3,
     "question": "What do you call a group of crows?",
     "correctAnswer": "B",
     "options": {
@@ -30,6 +36,8 @@
     }
   },
   {
+    "award": "$4,000",
+    "level": 4,
     "question": "What is the capital of Australia?",
     "correctAnswer": "D",
     "options": {
@@ -40,6 +48,8 @@
     }
   },
   {
+    "award": "$8,000",
+    "level": 5,
     "question": "What is the world's largest ocean?",
     "correctAnswer": "C",
     "options": {
@@ -50,6 +60,8 @@
     }
   },
   {
+    "award": "$16,000",
+    "level": 6,
     "question": "Who wrote the \"Game of Thrones\" series of books?",
     "correctAnswer": "B",
     "options": {
@@ -60,6 +72,8 @@
     }
   },
   {
+    "award": "$32,000",
+    "level": 7,
     "question": "What is the square root of 144?",
     "correctAnswer": "12",
     "options": {
@@ -70,6 +84,8 @@
     }
   },
   {
+    "award": "$64,000",
+    "level": 8,
     "question": "Which planet is known as the \"Red Planet\"?",
     "correctAnswer": "B",
     "options": {
@@ -80,6 +96,8 @@
     }
   },
   {
+    "award": "$125,000",
+    "level": 9,
     "question": "What is the chemical symbol for gold?",
     "correctAnswer": "C",
     "options": {
@@ -90,6 +108,8 @@
     }
   },
   {
+    "award": "$250,000",
+    "level": 10,
     "question": "Who painted the Mona Lisa?",
     "correctAnswer": "C",
     "options": {
@@ -100,6 +120,8 @@
     }
   },
   {
+    "award": "$500,000",
+    "level": 11,
     "question": "What is the name of the longest river in the world?",
     "correctAnswer": "B",
     "options": {
@@ -110,6 +132,8 @@
     }
   },
   {
+    "award": "$1,000,000",
+    "level": 12,
     "question": "Who was the first person to walk on the moon?",
     "correctAnswer": "B",
     "options": {

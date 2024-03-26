@@ -8,7 +8,7 @@ export const AmountLadder = () => {
 
   return (
     <div className="amount-ladder-wrapper">
-      {amountLadder.map((amount, index) => (
+      {amountLadder.map((amount) => (
         <Amount key={amount} stroke="red" amount={amount} colorShape="blue" />
       ))}
     </div>

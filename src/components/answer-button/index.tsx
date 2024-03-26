@@ -12,7 +12,7 @@ interface AnswerButtonProps {
   buttonStatus: ButtonAnswerStatus
 }
 
-export const AnswerButton: React.FC<AnswerButtonProps> = props => {
+export const AnswerButton: React.FC<AnswerButtonProps> = (props) => {
   const { buttonOrder, buttonText, buttonStatus } = props
 
   const { colorFillMap, colorStrokeMap } = useTheme()

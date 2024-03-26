@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { Button, Hand, MainTitle } from '../../components'
 import { ButtonContentType, PageOrder } from '../../types'
 
@@ -7,16 +8,13 @@ interface StartPageProps {
   handleSetPage: (page: PageOrder) => void
 }
 
-export const StartPage: React.FC<StartPageProps> = ({ handleSetPage }) => {
+export const StartPage: FC<StartPageProps> = ({ handleSetPage }) => {
   return (
     <div className="start-page-wrapper">
       <Hand />
       <div className="title-wrapper">
         <MainTitle />
-        <Button
-          buttonText={ButtonContentType.Start}
-          onClick={() => handleSetPage(PageOrder.Question)}
-        />
+        <Button onClick={() => handleSetPage(PageOrder.Question)}>{ButtonContentType.Start}</Button>
       </div>
       {/* <div className="triangle" /> */}
     </div>

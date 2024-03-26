@@ -1,20 +1,5 @@
 import config from '../config.json'
 
-const amountLadder = [
-  '$1,000,000',
-  '$500,000',
-  '$250,000',
-  '$125,000',
-  '$64,000',
-  '$32,000',
-  '$16,000',
-  '$8,000',
-  '$4,000',
-  '$2,000',
-  '$1,000',
-  '$500',
-]
-
 interface UseConfig {
   level?: number | string
 }
@@ -22,8 +7,11 @@ interface UseConfig {
 export const useConfig = (level: number) => {
   const correctAnswer = config[level].correctAnswer
   const options = config[level].options
+  const award = config[level].award
+  const amountLadder = config.map((level) => level.award)
 
   return {
+    award,
     options,
     correctAnswer,
     amountLadder,

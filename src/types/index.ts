@@ -23,5 +23,5 @@ export const enum PageOrder {
   Start = 'Start',
   Question = 'Question',
   Finish = 'Finish',
-  TotalScore = 'TotalScore'
+  TotalScore = 'TotalScore',
 }

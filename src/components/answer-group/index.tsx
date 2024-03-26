@@ -2,16 +2,18 @@ import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
 
 import { AnswerButton } from '../answer-button'
-import { incrementLevel, takeAnswer } from '../../features'
-import { ButtonAnswerStatus, ButtonOrder } from '../../types'
+import { ButtonAnswerStatus, ButtonOrder, PageOrder } from '../../types'
+import { clearRoundState, incrementLevel, takeAnswer, updateTotalScore } from '../../features'
 
 import './answer-group.css'
 
 interface AnswerGroupProps {
   level: number
+  totalScore: string
   answer: ButtonOrder
   options: Record<ButtonOrder, string>
   correctAnswer: ButtonOrder
+  handleSetPage: (page: PageOrder) => void
 }
 
 export const AnswerGroup: React.FC<AnswerGroupProps> = ({
@@ -19,6 +21,8 @@ export const AnswerGroup: React.FC<AnswerGroupProps> = ({
   answer,
   options,
   correctAnswer,
+  handleSetPage,
+  totalScore,
 }) => {
   const dispatch = useDispatch()
   const [answerStatus, setAnswerStatus] = useState(ButtonAnswerStatus.Inactive)
@@ -28,25 +32,34 @@ export const AnswerGroup: React.FC<AnswerGroupProps> = ({
   }
 
   useEffect(() => {
-    let internalTimer:number
+    let internalTimer: number
     const timer = setTimeout(() => {
-      if (correctAnswer === answer) {
+      if (correctAnswer && answer && correctAnswer === answer) {
         setAnswerStatus(ButtonAnswerStatus.Correct)
         internalTimer = setTimeout(() => {
           dispatch(incrementLevel())
           dispatch(takeAnswer(''))
-        }, 1000)
-      } else {
-        setAnswerStatus(ButtonAnswerStatus.Wrong)
+          dispatch(updateTotalScore(totalScore))
+        }, 100)
       }
-    }, 1000)
+
+      if (correctAnswer && answer && correctAnswer !== answer) {
+        setAnswerStatus(ButtonAnswerStatus.Wrong)
+        handleSetPage(PageOrder.TotalScore)
+      }
+    }, 100)
 
     return () => {
-      console.log('clear')
       clearTimeout(timer)
       clearTimeout(internalTimer)
     }
-  }, [answer, level, correctAnswer, dispatch])
+  }, [answer, level, correctAnswer, dispatch, handleSetPage, totalScore])
+
+  useEffect(() => {
+    return () => {
+      dispatch(clearRoundState())
+    }
+  }, [dispatch])
 
   const optionsArray = Object.entries(options)
 
