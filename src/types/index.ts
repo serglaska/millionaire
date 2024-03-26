@@ -1,4 +1,4 @@
-export const enum ButtonAnswerStatus {
+export enum ButtonAnswerStatus {
   Wrong = 'Wrong',
   Correct = 'Correct',
   Inactive = 'Inactive',
@@ -19,7 +19,7 @@ export enum ButtonContentType {
   TryAgain = 'Try again',
 }
 
-export const enum PageOrder {
+export enum PageOrder {
   Start = 'Start',
   Question = 'Question',
   Finish = 'Finish',

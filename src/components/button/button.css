@@ -13,4 +13,13 @@
   border-radius: 12px;
   color: var(--white-100);
   background: var(--orange-100);
+
+  &:hover {
+    cursor: pointer;
+    background: var(--orange-80);
+  }
+
+  &:active {
+    background: var(--orange-120);
+  }
 }

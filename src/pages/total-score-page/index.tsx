@@ -1,22 +1,24 @@
-import { FC, useEffect } from 'react'
+import { FC, memo, useEffect } from 'react'
 
 import { Button, Hand, MainTitle } from '../../components'
 import { ButtonContentType } from '../../types'
 
-import { useAppDispatch } from '../../store'
+import { RootState, useAppDispatch, useAppSelector } from '../../store'
 import { clearLevelState } from '../../features'
 import './total-score.css'
 
 interface TotalScorePageProps {
-  totalScore: string
   handleOnStartPage: () => void
 }
 
-export const TotalScorePage: FC<TotalScorePageProps> = ({ totalScore, handleOnStartPage }) => {
+export const TotalScorePage: FC<TotalScorePageProps> = memo(({ handleOnStartPage }) => {
   const dispatch = useAppDispatch()
+  const totalScore = useAppSelector((state: RootState) => state.level.totalScore)
+  console.log('rerender', totalScore)
 
   useEffect(() => {
     return () => {
+      console.log('total score page unmount')
       dispatch(clearLevelState())
     }
   }, [])
@@ -31,4 +33,4 @@ export const TotalScorePage: FC<TotalScorePageProps> = ({ totalScore, handleOnSt
       </div>
     </div>
   )
-}
+})

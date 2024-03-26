@@ -13,12 +13,12 @@ interface AnswerButtonProps {
 }
 
 export const AnswerButton: React.FC<AnswerButtonProps> = (props) => {
-  const { buttonOrder, buttonText, buttonStatus } = props
+  const { buttonOrder, buttonText, buttonStatus, ...rest } = props
 
   const { colorFillMap, colorStrokeMap } = useTheme()
 
   return (
-    <div className="answer-button" {...props}>
+    <div className="answer-button" {...rest}>
       <div className="text-wrapper">
         <p className="button-order">{buttonOrder}</p>
         <p className="button-text">{buttonText}</p>

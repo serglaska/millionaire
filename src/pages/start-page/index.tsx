@@ -11,12 +11,13 @@ interface StartPageProps {
 export const StartPage: FC<StartPageProps> = ({ handleSetPage }) => {
   return (
     <div className="start-page-wrapper">
-      <Hand />
+      <div className="hand-wrapper">
+        <Hand />
+      </div>
       <div className="title-wrapper">
         <MainTitle />
         <Button onClick={() => handleSetPage(PageOrder.Question)}>{ButtonContentType.Start}</Button>
       </div>
-      {/* <div className="triangle" /> */}
     </div>
   )
 }

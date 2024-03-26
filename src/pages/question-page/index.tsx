@@ -26,7 +26,7 @@ export const QuestionPage: React.FC<QuestionPageProps> = ({ handleSetPage }) => 
           handleSetPage={handleSetPage}
           level={currentLevel.question}
           answer={currentRound.answer as ButtonOrder}
-          correctAnswer={correctAnswer as ButtonOrder}
+          correctAnswer={correctAnswer}
         />
       </div>
       <AmountLadder />

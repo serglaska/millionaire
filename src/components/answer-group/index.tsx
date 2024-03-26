@@ -12,7 +12,7 @@ interface AnswerGroupProps {
   totalScore: string
   answer: ButtonOrder
   options: Record<ButtonOrder, string>
-  correctAnswer: ButtonOrder
+  correctAnswer: ButtonOrder[]
   handleSetPage: (page: PageOrder) => void
 }
 
@@ -34,7 +34,7 @@ export const AnswerGroup: React.FC<AnswerGroupProps> = ({
   useEffect(() => {
     let internalTimer: number
     const timer = setTimeout(() => {
-      if (correctAnswer && answer && correctAnswer === answer) {
+      if (correctAnswer && answer && correctAnswer.includes(answer)) {
         setAnswerStatus(ButtonAnswerStatus.Correct)
         internalTimer = setTimeout(() => {
           dispatch(incrementLevel())
@@ -43,7 +43,7 @@ export const AnswerGroup: React.FC<AnswerGroupProps> = ({
         }, 100)
       }
 
-      if (correctAnswer && answer && correctAnswer !== answer) {
+      if (correctAnswer && answer && !correctAnswer.includes(answer)) {
         setAnswerStatus(ButtonAnswerStatus.Wrong)
         handleSetPage(PageOrder.TotalScore)
       }

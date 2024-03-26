@@ -3,7 +3,9 @@
     "award": "$500",
     "level": 1,
     "question": "What is the color of the White House?",
-    "correctAnswer": "C",
+    "correctAnswer": [
+      "C"
+    ],
     "options": {
       "A": "Pink",
       "B": "Blue",
@@ -15,7 +17,9 @@
     "award": "$1,000",
     "level": 2,
     "question": "How many legs does a spider typically have?",
-    "correctAnswer": "C",
+    "correctAnswer": [
+      "C"
+    ],
     "options": {
       "A": "100",
       "B": "2",
@@ -27,7 +31,9 @@
     "award": "$2,000",
     "level": 3,
     "question": "What do you call a group of crows?",
-    "correctAnswer": "B",
+    "correctAnswer": [
+      "B"
+    ],
     "options": {
       "A": "A flock",
       "B": "A murder",
@@ -39,7 +45,9 @@
     "award": "$4,000",
     "level": 4,
     "question": "What is the capital of Australia?",
-    "correctAnswer": "D",
+    "correctAnswer": [
+      "D"
+    ],
     "options": {
       "A": "Sydney",
       "B": "Melbourne",
@@ -51,7 +59,9 @@
     "award": "$8,000",
     "level": 5,
     "question": "What is the world's largest ocean?",
-    "correctAnswer": "C",
+    "correctAnswer": [
+      "C"
+    ],
     "options": {
       "A": "Atlantic",
       "B": "Indian",
@@ -63,7 +73,9 @@
     "award": "$16,000",
     "level": 6,
     "question": "Who wrote the \"Game of Thrones\" series of books?",
-    "correctAnswer": "B",
+    "correctAnswer": [
+      "B"
+    ],
     "options": {
       "A": "J.K. Rowling",
       "B": "George R. R. Martin",
@@ -75,7 +87,9 @@
     "award": "$32,000",
     "level": 7,
     "question": "What is the square root of 144?",
-    "correctAnswer": "12",
+    "correctAnswer": [
+      "A"
+    ],
     "options": {
       "A": "12",
       "B": "14",
@@ -87,7 +101,9 @@
     "award": "$64,000",
     "level": 8,
     "question": "Which planet is known as the \"Red Planet\"?",
-    "correctAnswer": "B",
+    "correctAnswer": [
+      "B"
+    ],
     "options": {
       "A": "Venus",
       "B": "Mars",
@@ -99,7 +115,9 @@
     "award": "$125,000",
     "level": 9,
     "question": "What is the chemical symbol for gold?",
-    "correctAnswer": "C",
+    "correctAnswer": [
+      "C"
+    ],
     "options": {
       "A": "Gd",
       "B": "Go",
@@ -111,7 +129,9 @@
     "award": "$250,000",
     "level": 10,
     "question": "Who painted the Mona Lisa?",
-    "correctAnswer": "C",
+    "correctAnswer": [
+      "C"
+    ],
     "options": {
       "A": "Vincent Van Gogh",
       "B": "Pablo Picasso",
@@ -123,7 +143,9 @@
     "award": "$500,000",
     "level": 11,
     "question": "What is the name of the longest river in the world?",
-    "correctAnswer": "B",
+    "correctAnswer": [
+      "B"
+    ],
     "options": {
       "A": "Amazon",
       "B": "Nile",
@@ -135,7 +157,9 @@
     "award": "$1,000,000",
     "level": 12,
     "question": "Who was the first person to walk on the moon?",
-    "correctAnswer": "B",
+    "correctAnswer": [
+      "B"
+    ],
     "options": {
       "A": "Buzz Aldrin",
       "B": "Neil Armstrong",

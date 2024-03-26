@@ -1,14 +1,11 @@
 import config from '../config.json'
-
-interface UseConfig {
-  level?: number | string
-}
+import { ButtonOrder } from '../types'
 
 export const useConfig = (level: number) => {
-  const correctAnswer = config[level].correctAnswer
+  const correctAnswer = config[level].correctAnswer as ButtonOrder[]
   const options = config[level].options
   const award = config[level].award
-  const amountLadder = config.map((level) => level.award)
+  const amountLadder = config.map((level) => level.award).reverse()
 
   return {
     award,
