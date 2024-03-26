@@ -1,16 +1,62 @@
+import { FC } from 'react'
+
 import { useConfig } from '../../hooks'
 import { Amount } from '../amount'
+import { RootState, useAppSelector } from '../../store'
 
 import './amount-ladder.css'
 
-export const AmountLadder = () => {
+const GRAY_COLOR = 'var(--gray-shape)'
+const BLACK_COLOR = 'var(--black-100)'
+const ORANGE_COLOR = 'var(--orange-100)'
+
+const leaderStatus = {
+  active: {
+    color: ORANGE_COLOR,
+    stroke: ORANGE_COLOR,
+    colorShape: ORANGE_COLOR,
+  },
+  past: {
+    color: GRAY_COLOR,
+    stroke: GRAY_COLOR,
+    colorShape: GRAY_COLOR,
+  },
+  future: {
+    color: BLACK_COLOR,
+    stroke: GRAY_COLOR,
+    colorShape: GRAY_COLOR,
+  },
+}
+
+const status = (level: number, index: number) => {
+  switch (true) {
+    case level === index:
+      return 'active'
+    case level < index:
+      return 'future'
+    case level > index:
+    default:
+      return 'past'
+  }
+}
+
+export const AmountLadder: FC = () => {
   const { amountLadder } = useConfig(0)
+  const level = useAppSelector((state: RootState) => state.level.question)
 
   return (
     <div className="amount-ladder-wrapper">
-      {amountLadder.map((amount) => (
-        <Amount key={amount} stroke="red" amount={amount} colorShape="blue" />
-      ))}
+      {amountLadder.map((amount, index) => {
+        return (
+          <Amount
+            key={amount}
+            amount={amount}
+            color={leaderStatus[status(level, index)].color}
+            stroke={leaderStatus[status(level, index)].stroke}
+            colorShape={leaderStatus[status(level, index)].colorShape}
+          />
+        )
+      })}
     </div>
   )
 }

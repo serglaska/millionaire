@@ -1,10 +1,11 @@
 import { useAppSelector, type RootState } from '../../store'
 import config from '../../config.json'
-import { useConfig } from '../../hooks'
+import { useConfig, useDisplayViewSize } from '../../hooks'
 import { ButtonOrder, PageOrder } from '../../types'
 import { AmountLadder, AnswerGroup } from '../../components'
 
 import './question-page.css'
+import { DISPLAY_L_SIZE } from '../../constants'
 
 interface QuestionPageProps {
   handleSetPage: (page: PageOrder) => void
@@ -13,7 +14,16 @@ interface QuestionPageProps {
 export const QuestionPage: React.FC<QuestionPageProps> = ({ handleSetPage }) => {
   const currentLevel = useAppSelector((state: RootState) => state.level)
   const currentRound = useAppSelector((state: RootState) => state.round)
+  const { displayWidth } = useDisplayViewSize()
+  console.log(' -------------------------')
+  console.log('displayWidth', displayWidth)
+  console.log(' -------------------------')
 
+  const isShowLadder = DISPLAY_L_SIZE <= displayWidth
+
+  console.log(' ---------------------')
+  // console.log('dimensions', dimensions)
+  console.log(' ---------------------')
   const { correctAnswer, options, amountLadder } = useConfig(currentLevel.question)
 
   return (
@@ -29,7 +39,7 @@ export const QuestionPage: React.FC<QuestionPageProps> = ({ handleSetPage }) => 
           correctAnswer={correctAnswer}
         />
       </div>
-      <AmountLadder />
+      {isShowLadder && <AmountLadder />}
     </div>
   )
 }

@@ -1,8 +1,11 @@
 .answer-group {
-  /* margin: auto; */
   width: max-content;
   display: grid;
   grid-template-columns: 373px 373px;
   grid-template-rows: 1fr 1fr;
   column-gap: 0px;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
 }

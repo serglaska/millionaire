@@ -5,3 +5,4 @@ export { AnswerGroup } from './answer-group'
 export { AmountLadder } from './amountLadder'
 export { AnswerButton } from './answer-button'
 
+export * from './icons'

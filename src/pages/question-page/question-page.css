@@ -3,12 +3,20 @@
   grid-template-columns: 1fr 376px;
   height: 100%;
   background: var(--black-5);
-}
 
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+  }
+}
 
 .question-part {
   padding: 133px 0 122px 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (max-width: 1200px) {
+    align-items: center;
+    padding: 80px 0;
+  }
 }
