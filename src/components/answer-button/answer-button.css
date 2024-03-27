@@ -15,7 +15,6 @@
   }
 }
 
-
 .text-wrapper {
   left: 48px;
   position: absolute;
@@ -26,11 +25,10 @@
 
 .button-text {
   color: var(--black-100);
-  /* font-family: Inter; */
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 116%; /* 23.2px */
+  line-height: 116%;
 }
 
 .button-order {
@@ -40,5 +38,5 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  line-height: 116%; /* 23.2px */
+  line-height: 116%;
 }

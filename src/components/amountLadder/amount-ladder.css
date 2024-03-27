@@ -4,4 +4,18 @@
   justify-content: center;
   gap: 8px;
   background: var(--white-100);
+
+  @media screen and (max-width: 1200px) {
+    height: 100%;
+    max-width: 425px;
+    min-width: 375px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  @media screen and (max-width: 425px) {
+    width: 100%;
+    min-width: unset;
+  }
 }

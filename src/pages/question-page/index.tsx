@@ -1,11 +1,13 @@
-import { useAppSelector, type RootState } from '../../store'
+import { useEffect, useState } from 'react'
+
 import config from '../../config.json'
-import { useConfig, useDisplayViewSize } from '../../hooks'
+import { DISPLAY_L_SIZE } from '../../constants'
 import { ButtonOrder, PageOrder } from '../../types'
-import { AmountLadder, AnswerGroup } from '../../components'
+import { useConfig, useDisplayViewSize } from '../../hooks'
+import { useAppSelector, type RootState } from '../../store'
+import { AmountLadder, AnswerGroup, Header } from '../../components'
 
 import './question-page.css'
-import { DISPLAY_L_SIZE } from '../../constants'
 
 interface QuestionPageProps {
   handleSetPage: (page: PageOrder) => void
@@ -15,20 +17,27 @@ export const QuestionPage: React.FC<QuestionPageProps> = ({ handleSetPage }) => 
   const currentLevel = useAppSelector((state: RootState) => state.level)
   const currentRound = useAppSelector((state: RootState) => state.round)
   const { displayWidth } = useDisplayViewSize()
-  console.log(' -------------------------')
-  console.log('displayWidth', displayWidth)
-  console.log(' -------------------------')
-
-  const isShowLadder = DISPLAY_L_SIZE <= displayWidth
-
-  console.log(' ---------------------')
-  // console.log('dimensions', dimensions)
-  console.log(' ---------------------')
+  const [isShowSandwichBar, setIsShowSandwichBar] = useState<boolean>(true)
+  const isMobile = DISPLAY_L_SIZE <= displayWidth
+  const [isShowLadder, setIsShowLadder] = useState<boolean>(isMobile)
   const { correctAnswer, options, amountLadder } = useConfig(currentLevel.question)
+
+  useEffect(() => {
+    setIsShowLadder(isMobile)
+  }, [isMobile])
 
   return (
     <div className="question-page-wrapper">
       <div className="question-part">
+        {!isMobile && (
+          <div className="header-wrapper">
+            <Header
+              isShowSandwichBar={isShowSandwichBar}
+              setIsShowSandwichBar={setIsShowSandwichBar}
+              setIsShowLadder={setIsShowLadder}
+            />
+          </div>
+        )}
         <h2>{config[currentLevel.question].question}</h2>
         <AnswerGroup
           totalScore={amountLadder[currentLevel.question]}

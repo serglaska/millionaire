@@ -5,6 +5,7 @@ export enum ButtonAnswerStatus {
   Selected = 'Selected',
 }
 
+// Extends more option here
 const buttonOrder = {
   A: 'A',
   B: 'B',
