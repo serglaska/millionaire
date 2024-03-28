@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 import { AnswerButton } from '../answer-button'
 import { ButtonAnswerStatus, ButtonOrder, PageOrder } from '../../types'
@@ -8,6 +8,7 @@ import { clearRoundState, incrementLevel, takeAnswer, updateTotalScore } from '.
 import './answer-group.css'
 
 interface AnswerGroupProps {
+  levels: number[]
   level: number
   totalScore: string
   answer: ButtonOrder
@@ -16,13 +17,14 @@ interface AnswerGroupProps {
   handleSetPage: (page: PageOrder) => void
 }
 
-export const AnswerGroup: React.FC<AnswerGroupProps> = ({
+export const AnswerGroup: FC<AnswerGroupProps> = ({
   level,
   answer,
+  levels,
   options,
+  totalScore,
   correctAnswer,
   handleSetPage,
-  totalScore,
 }) => {
   const dispatch = useDispatch()
   const [answerStatus, setAnswerStatus] = useState(ButtonAnswerStatus.Inactive)
@@ -33,6 +35,7 @@ export const AnswerGroup: React.FC<AnswerGroupProps> = ({
 
   useEffect(() => {
     let internalTimer: number
+
     const timer = setTimeout(() => {
       if (correctAnswer && answer && correctAnswer.includes(answer)) {
         setAnswerStatus(ButtonAnswerStatus.Correct)
@@ -53,7 +56,7 @@ export const AnswerGroup: React.FC<AnswerGroupProps> = ({
       clearTimeout(timer)
       clearTimeout(internalTimer)
     }
-  }, [answer, level, correctAnswer, dispatch, handleSetPage, totalScore])
+  }, [answer, level, correctAnswer, dispatch, handleSetPage, totalScore, levels])
 
   useEffect(() => {
     return () => {
@@ -61,7 +64,7 @@ export const AnswerGroup: React.FC<AnswerGroupProps> = ({
     }
   }, [dispatch])
 
-  const optionsArray = Object.entries(options)
+  const optionsArray = Object.entries(options ?? {})
 
   return (
     <div className="answer-group">

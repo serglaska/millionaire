@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
-import { useConfig } from '../../hooks'
 import { Amount } from '../amount'
+import { useConfig } from '../../hooks'
 import { RootState, useAppSelector } from '../../store'
 
 import './amount-ladder.css'
@@ -46,17 +46,15 @@ export const AmountLadder: FC = () => {
 
   return (
     <div className="amount-ladder-wrapper">
-      {amountLadder.map((amount, index) => {
-        return (
-          <Amount
-            key={amount}
-            amount={amount}
-            color={leaderStatus[status(level, index)].color}
-            stroke={leaderStatus[status(level, index)].stroke}
-            colorShape={leaderStatus[status(level, index)].colorShape}
-          />
-        )
-      })}
+      {amountLadder.map((amount, index) => (
+        <Amount
+          key={amount}
+          amount={amount}
+          color={leaderStatus[status(level, index)].color}
+          stroke={leaderStatus[status(level, index)].stroke}
+          colorShape={leaderStatus[status(level, index)].colorShape}
+        />
+      ))}
     </div>
   )
 }

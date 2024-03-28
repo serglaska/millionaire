@@ -20,11 +20,17 @@ export const QuestionPage: React.FC<QuestionPageProps> = ({ handleSetPage }) => 
   const [isShowSandwichBar, setIsShowSandwichBar] = useState<boolean>(true)
   const isMobile = DISPLAY_L_SIZE <= displayWidth
   const [isShowLadder, setIsShowLadder] = useState<boolean>(isMobile)
-  const { correctAnswer, options, amountLadder } = useConfig(currentLevel.question)
+  const { correctAnswer, options, amountLadder, levels } = useConfig(currentLevel?.question)
 
   useEffect(() => {
     setIsShowLadder(isMobile)
   }, [isMobile])
+
+  useEffect(() => {
+    if (currentLevel?.question === levels[levels.length - 1]) {
+      handleSetPage(PageOrder.Finish)
+    }
+  }, [currentLevel?.question, levels, handleSetPage, options])
 
   return (
     <div className="question-page-wrapper">
@@ -38,14 +44,15 @@ export const QuestionPage: React.FC<QuestionPageProps> = ({ handleSetPage }) => 
             />
           </div>
         )}
-        <h2>{config[currentLevel.question].question}</h2>
+        <h2>{config[currentLevel.question]?.question}</h2>
         <AnswerGroup
-          totalScore={amountLadder[currentLevel.question]}
+          levels={levels}
           options={options}
           handleSetPage={handleSetPage}
-          level={currentLevel.question}
-          answer={currentRound.answer as ButtonOrder}
+          level={currentLevel?.question}
           correctAnswer={correctAnswer}
+          answer={currentRound.answer as ButtonOrder}
+          totalScore={amountLadder[currentLevel?.question]}
         />
       </div>
       {isShowLadder && <AmountLadder />}

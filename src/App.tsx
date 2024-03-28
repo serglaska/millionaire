@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react'
 
-import { QuestionPage, StartPage, TotalScorePage } from './pages'
 import { PageOrder } from './types'
+import { QuestionPage, StartPage, TotalScorePage } from './pages'
 
 import './App.css'
 
@@ -23,11 +23,10 @@ export const App = () => {
         return <StartPage handleSetPage={handleSetPage} />
       case PageOrder.Question:
         return <QuestionPage handleSetPage={handleSetPage} />
-      case PageOrder.TotalScore:
-        return <TotalScorePage handleOnStartPage={handleOnStartPage} />
       case PageOrder.Finish:
+      case PageOrder.TotalScore:
       default:
-        return <div></div>
+        return <TotalScorePage handleOnStartPage={handleOnStartPage} />
     }
   }, [page, handleSetPage, handleOnStartPage])
 

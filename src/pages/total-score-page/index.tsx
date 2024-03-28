@@ -1,10 +1,10 @@
 import { FC, memo, useEffect } from 'react'
 
-import { Button, Hand, MainTitle } from '../../components'
 import { ButtonContentType } from '../../types'
-
-import { RootState, useAppDispatch, useAppSelector } from '../../store'
 import { clearLevelState } from '../../features'
+import { Button, Hand, MainTitle } from '../../components'
+import { RootState, useAppDispatch, useAppSelector } from '../../store'
+
 import './total-score.css'
 
 interface TotalScorePageProps {
@@ -14,7 +14,6 @@ interface TotalScorePageProps {
 export const TotalScorePage: FC<TotalScorePageProps> = memo(({ handleOnStartPage }) => {
   const dispatch = useAppDispatch()
   const totalScore = useAppSelector((state: RootState) => state.level.totalScore)
-  console.log('rerender', totalScore)
 
   useEffect(() => {
     return () => {
