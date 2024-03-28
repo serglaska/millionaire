@@ -6,10 +6,27 @@
   background: var(--white-100);
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+  }
 }
 
-.title-wrapper {
+.title {
   display: flex;
   gap: 24px;
   flex-direction: column;
+}
+
+.total {
+  color: var(--black-60);
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 37px;
+}
+
+.hand-wrapper {
+  @media screen and (max-width: 1024px) {
+    transform: scale(0.5);
+  }
 }

@@ -12,12 +12,7 @@ export const App = () => {
     setPage(page)
   }, [])
 
-  const handleOnStartPage = useCallback(() => {
-    setPage(PageOrder.Question)
-  }, [])
-
   const showPage = useCallback(() => {
-    console.log('show page', page)
     switch (page) {
       case PageOrder.Start:
         return <StartPage handleSetPage={handleSetPage} />
@@ -26,9 +21,9 @@ export const App = () => {
       case PageOrder.Finish:
       case PageOrder.TotalScore:
       default:
-        return <TotalScorePage handleOnStartPage={handleOnStartPage} />
+        return <TotalScorePage handleOnStartPage={handleSetPage} />
     }
-  }, [page, handleSetPage, handleOnStartPage])
+  }, [page, handleSetPage])
 
   return showPage()
 }
