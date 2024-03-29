@@ -56,7 +56,6 @@ a:hover {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 button,
@@ -65,7 +64,6 @@ input[type='submit'] {
   background-color: #007bff;
   color: #fff;
   border: none;
-  padding: 10px 20px;
   border-radius: 4px;
 }
 
@@ -73,7 +71,6 @@ input[type='text'],
 input[type='email'],
 textarea {
   width: 100%;
-  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
